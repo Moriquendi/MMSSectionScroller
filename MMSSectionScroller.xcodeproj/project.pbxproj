@@ -21,6 +21,7 @@
 		9077161B185474A500F8CA83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907715FD185474A500F8CA83 /* UIKit.framework */; };
 		90771623185474A500F8CA83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90771621185474A500F8CA83 /* InfoPlist.strings */; };
 		90771625185474A500F8CA83 /* MMSSectionScrollerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90771624185474A500F8CA83 /* MMSSectionScrollerTests.m */; };
+		907716301854781400F8CA83 /* MMSSectionScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 9077162F1854781400F8CA83 /* MMSSectionScroller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		90771620185474A500F8CA83 /* MMSSectionScrollerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MMSSectionScrollerTests-Info.plist"; sourceTree = "<group>"; };
 		90771622185474A500F8CA83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		90771624185474A500F8CA83 /* MMSSectionScrollerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMSSectionScrollerTests.m; sourceTree = "<group>"; };
+		9077162E1854781400F8CA83 /* MMSSectionScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMSSectionScroller.h; path = MMSSectionScroller/MMSSectionScroller.h; sourceTree = "<group>"; };
+		9077162F1854781400F8CA83 /* MMSSectionScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMSSectionScroller.m; path = MMSSectionScroller/MMSSectionScroller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 				9077160B185474A500F8CA83 /* Main.storyboard */,
 				9077160E185474A500F8CA83 /* MMSViewController.h */,
 				9077160F185474A500F8CA83 /* MMSViewController.m */,
+				907716311854781900F8CA83 /* SectionScroller */,
 				90771611185474A500F8CA83 /* Images.xcassets */,
 				90771600185474A500F8CA83 /* Supporting Files */,
 			);
@@ -150,6 +154,15 @@
 				90771621185474A500F8CA83 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		907716311854781900F8CA83 /* SectionScroller */ = {
+			isa = PBXGroup;
+			children = (
+				9077162E1854781400F8CA83 /* MMSSectionScroller.h */,
+				9077162F1854781400F8CA83 /* MMSSectionScroller.m */,
+			);
+			name = SectionScroller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +266,7 @@
 				90771610185474A500F8CA83 /* MMSViewController.m in Sources */,
 				9077160A185474A500F8CA83 /* MMSAppDelegate.m in Sources */,
 				90771606185474A500F8CA83 /* main.m in Sources */,
+				907716301854781400F8CA83 /* MMSSectionScroller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +475,7 @@
 				9077162A185474A500F8CA83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9077162B185474A500F8CA83 /* Build configuration list for PBXNativeTarget "MMSSectionScrollerTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +484,7 @@
 				9077162D185474A500F8CA83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,10 +7,11 @@
 //
 
 #import "MMSViewController.h"
+#import "MMSSectionScroller.h"
 
 @interface MMSViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
+@property (nonatomic, strong) MMSSectionScroller *sectionIndicator;
 @property (nonatomic) NSInteger sectionsCount;
 
 @end
@@ -22,7 +23,6 @@
     [super viewDidLoad];
     
     self.sectionsCount = 10;
-
     // Setting up scroll view
     self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width,
                                              2000);
@@ -38,12 +38,10 @@
         sectionLabel.frame = labelFrame;
         [self.scrollView addSubview:sectionLabel];
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    // Section scroller
+    self.sectionIndicator = [[MMSSectionScroller alloc] initWithFrame:CGRectMake(0, 0, 70, 35)
+                                                           scrollView:self.scrollView];
 }
 
 @end
