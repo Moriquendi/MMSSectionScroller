@@ -9,6 +9,9 @@
 #import "MMSViewController.h"
 
 @interface MMSViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (nonatomic) NSInteger sectionsCount;
 
 @end
 
@@ -17,7 +20,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.sectionsCount = 10;
+
+    // Setting up scroll view
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width,
+                                             2000);
+    
+    for (NSInteger i=0; i<self.sectionsCount; i++) {
+        UILabel *sectionLabel = [[UILabel alloc] init];
+        sectionLabel.text = [NSString stringWithFormat:@"Section %i", i+1];
+        CGRect labelFrame;
+        labelFrame = CGRectMake(20,
+                                20 + i * self.scrollView.contentSize.height / self.sectionsCount,
+                                100,
+                                80);
+        sectionLabel.frame = labelFrame;
+        [self.scrollView addSubview:sectionLabel];
+    }
 }
 
 - (void)didReceiveMemoryWarning
