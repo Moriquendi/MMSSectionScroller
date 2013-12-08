@@ -10,10 +10,18 @@
 
 @protocol MMSSectionScrollerDelegate <NSObject>
 @optional
-- (void)configureView:(UIView *)view forSection:(NSInteger)section;
+- (void)configureContentView:(UIView *)view forSection:(NSInteger)section;
 @end
 
 @interface MMSSectionScroller : UIView
+
+@property (nonatomic, weak) id <MMSSectionScrollerDelegate> delegate;
+@property (nonatomic) NSInteger sectiounsCount;
+
+/**
+ nil by default.
+ */
+@property (nonatomic, strong) UIView *contentView;
 
 // Designated initializer
 - (instancetype)initWithFrame:(CGRect)frame scrollView:(UIScrollView *)scrollView;

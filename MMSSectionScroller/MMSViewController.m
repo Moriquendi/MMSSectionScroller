@@ -9,7 +9,7 @@
 #import "MMSViewController.h"
 #import "MMSSectionScroller.h"
 
-@interface MMSViewController ()
+@interface MMSViewController () <MMSSectionScrollerDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) MMSSectionScroller *sectionIndicator;
 @property (nonatomic) NSInteger sectionsCount;
@@ -42,6 +42,16 @@
     // Section scroller
     self.sectionIndicator = [[MMSSectionScroller alloc] initWithFrame:CGRectMake(0, 0, 70, 35)
                                                            scrollView:self.scrollView];
+    self.sectionIndicator.delegate = self;
+    self.sectionIndicator.contentView = [[UILabel alloc] init];
+    self.sectionIndicator.sectiounsCount = self.sectionsCount;
+}
+
+#pragma mark - <MMSectionScrollerDelegate>
+
+- (void)configureContentView:(UIView *)view forSection:(NSInteger)section
+{
+    ((UILabel *)view).text = [NSString stringWithFormat:@"%i", section];
 }
 
 @end
